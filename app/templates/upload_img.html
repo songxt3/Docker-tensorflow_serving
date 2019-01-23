@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Image Classifier</title>
+    <link href = "{{ url_for('static', filename= './css/upload_img.css') }}" type = "text/css" rel = "stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='./web_img/icon.ico') }}">
+    <script type= "text/javascript" src= "{{ url_for('static', filename= './js/upload_img.css') }}"></script>
+    </head>
+    <body>
+    <div class= "app">
+        <div class = "left_part">
+            <div class = "upload_area">
+                <div class = "main_content">SortImg
+                </div>
+            </div>
+            <div class = "info_area">
+                {% if flag == "success" %}
+                    <p class = "pre_text">This is a image of a {{ info[0]['name'] }}</p>
+                    <hr />
+                <p style= "font-size:15px;"><b>This is the possibility of the first five classification:</b></p>
+                <table border="1" width= "100%">
+                    <tr><th>Name</th><th>Accuracy</th></tr>
+                {% for per_info in info %}
+                    <tr><td>{{ per_info['name'] }}</td><td>{{ per_info['acc'] }}</td></tr>
+                {% endfor %}
+                </table>
+                {% else %}
+                    <p class = "welcome_text" style = "text-align:center;">Welcome to the online image classification website!</p>
+                    <hr />
+                    <p style= "font-size:20px;">Please select a image you like on the left and click the 'sort' button.</p>
+                {% endif %}
+            </div>
+        </div>
+        <div class = "right_part">
+            <div class = "display_area">
+            {% if flag == "fail" %}
+                <img src= "{{ url_for('static', filename= './web_img/initial.png') }}" width="400" height="400" alt="please upload img～"/>
+            {% else %}
+                <img src="{{ upload_pa }}" width="400" height="400" alt="please upload img～"/>
+            {% endif %}
+            </div>
+            <div class= "button">
+                <form action="" enctype='multipart/form-data' method='POST'>
+                    <input type="file" name="file" id = "file" class = "upload_button">
+                    <label for="file" style = "text-align:center;">Choose a image</label>
+                    <input type="submit" value="Sort" class= "sort_botton">
+                </form>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
