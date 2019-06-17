@@ -50,3 +50,14 @@ cd Docker-tensorflow_serving/
 ```
 python run.py
 ```
+## 实现效果
+**主界面**  
+![](app/showimg/home.png)  
+**登陆**  
+![](app/showimg/login.png)  
+**花卉分类**  
+![](app/showimg/flower.png)  
+**1000种事物分类**  
+![](app/showimg/pre_info.png)  
+**历史记录**  
+![](app/showimg/history.png)  
