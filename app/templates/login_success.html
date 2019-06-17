@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>History</title>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='./web_img/icon.png') }}">
+	<script src="{{ url_for('static', filename='./js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='./js/loading.js') }}"></script>
+    <link href="{{ url_for('static', filename= './css/loading.css') }}" type="text/css" rel="stylesheet">
+	<link href="{{ url_for('static', filename= './css/login_success.css') }}" type="text/css" rel="stylesheet">
+	<script src="{{ url_for('static', filename='./js/hidden.js') }}"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+</head>
+<body>
+	<div id = "loading">
+        <div class='loader loader2'>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div id="show_area" style="display: none;">
+		<div id = "top_bar">
+			<div id = "icon_white">
+			<img src="{{ url_for('static', filename= './web_img/icon_white.svg') }}" height="100%" />
+			</div>
+			<div id = "text_bar">
+			<p>Image Onlne Classifier</p>
+			</div>
+			<div id = "user_menu">
+				<p class= "outer">Welocme,</p>
+				<div id = "cilck_menu">
+					<img src="{{ url_for('static', filename= './web_img/user.svg') }}" height="40px" id = "user_icon"/>
+					<p class = "outer">{{ name }}</p>
+					<img src="{{ url_for('static', filename= './web_img/display.svg') }}" height="10px" id = "dis_icon" />
+					<div id = "hidden_part">
+						<a href="/others/id={{ uid }}"><p>Classify</p></a>
+						<hr />
+						<a href="/id={{ uid }}"><p>Home Page</p></a>
+						<hr />
+						<a href="/logout"><p>Login Out</p></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id = "main_content">
+			{% if info_mapping == "" %}
+				<p>NO HISTORY</p>
+			{% else %}
+			<table border="1" width= "100%">
+					<tr><th width= "70%">Image</th><th width="30%">Info</th></tr>
+			</table>
+			 <div style="overflow-x: auto; overflow-y: auto; height: 100%; width:100%; z-index: 1">
+				<table border="1" width= "100%">
+	                    {% for key, value in info_mapping.iteritems() %}
+	                    	<tr><td width="70%"><img src="/static/images/{{ key }}" height="200px"/><a href="/drop/{{ uid }}/{{ key }}"><img src="{{ url_for('static', filename= './web_img/delete.svg') }}" height="20px" width="20px" class = "delete_img"/></a></td><td width="30%">{{ value }}</td></tr>
+	                    {% endfor %}
+	            </table>
+	        </div>
+            {% endif %}
+		</div>
+		<div id = "orgin_img">
+		</div>
+		<div id = "button_bar">
+			<div id = "button_text">
+				<p>Classify you want!</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

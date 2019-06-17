@@ -74,7 +74,7 @@ body, html {
 	height: 100%;
 	padding: 0;
 	margin: 0;
-	background: url(../web_img/background_img.png);
+	background: url(../web_img/background_flower.jpg);
 	background-size: 100% 100%;
 }
 
@@ -88,6 +88,7 @@ body, html {
 
 #cate {
     margin: 0;
+    /*background-color: blue;*/
 }
 
 .right_area {
@@ -148,8 +149,8 @@ body, html {
     font-family: Century Gothic, Futura, Verdana;
     font-size: 42pt;
     width: 100%;
-    margin-top: 0.5em;
     text-shadow: 1px 1px 2px #666666;
+    margin-top: 0.5em;
     color: #346137;
 }
 

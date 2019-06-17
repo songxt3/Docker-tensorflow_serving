@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Image Onlne Classifier</title>
-    <link href = "{{ url_for('static', filename= './css/upload_v2.css') }}" type = "text/css" rel = "stylesheet">
+    <link href = "{{ url_for('static', filename= './css/upload_v1.css') }}" type = "text/css" rel = "stylesheet">
     <link rel="shortcut icon" href="{{ url_for('static', filename='./web_img/icon.png') }}">
     <link href="{{ url_for('static', filename= './css/loading.css') }}" type="text/css" rel="stylesheet">
     <script src="{{ url_for('static', filename='./js/jquery.js') }}"></script>
@@ -37,7 +37,6 @@
                     <form style="display: none;" id="form_img" action="/{{ action_opt }}/id={{ uid }}" method="post" enctype="multipart/form-data">
                 {% endif %}
                     <input type="file" name="file" id="uploadfile" />
-                }
                 </form>
                 <img src="{{ url_for('static', filename= './web_img/upload_icon.svg') }}" width="100%" height="100%" id = "upload_display"/>
             </div>
@@ -72,7 +71,7 @@
         <div class = "view_part">
             <div class = "info_area">
                 <div class= "info_text">
-                    <p id = "cate"><b>1000 categories</b></p>
+                    <p id = "cate"><b>17 categories</b></p>
                     {% if flag == "success" %}
 <!--                         <p class = "pre_text">This is a image of <a href = "https://www.baidu.com/s?wd={{ info[0]['name'] }}" class = "Dlink" target="_blank">{{ info[0]['name'] }}</a></p>
                         <hr /> -->
@@ -88,7 +87,7 @@
                     {% else %}
                         <p class = "welcome_text" style = "text-align:center;">Welcome to the online image classification website!</p>
                         <hr />
-                        <p style= "font-size:20px;">Please click the upload icon to select a image.</p>
+                        <p style= "font-size:20px;">Please click the upload icon to select a image of flower.</p>
                     {% endif %}
                 </div>
             </div>

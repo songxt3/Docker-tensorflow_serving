@@ -1,18 +1,67 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Home Page</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='./web_img/icon.png') }}">
+    <script src="{{ url_for('static', filename='./js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='./js/loading.js') }}"></script>
+    <link href="{{ url_for('static', filename= './css/loading.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ url_for('static', filename= './css/home.css') }}" type="text/css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
 </head>
     <body>
-        <div>
-            <form method="post" action="http://localhost:5000/up_photo" enctype="multipart/form-data">
-            <input type="file" size="30" name="photo"/>
-            <br>
-            <input type="text" class="txt_input" name="name" style="margin-top:15px;"/>
-            <input type="submit" value="提交信息" class="button-new" style="margin-top:15px;"/>
-            </form>
+    <div id = "loading">
+        <div class='loader loader2'>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+    </div>
+    <div id="show_area" style="display: none;">
+        {% if uid == "" %}
+            <a href = "/others"><div class = "hidden_info" id = "hidden_ltop"><p>Most Pictures</p></div></a>
+            <a href= "/flower"><div class = "hidden_info" id = "hidden_rtop"><p>Flowers</p></div></a>
+        {% else %}
+            <a href = "/others/id={{ uid }}"><div class = "hidden_info" id = "hidden_ltop"><p>Most Pictures</p></div></a>
+            <a href= "/flower/id={{ uid }}"><div class = "hidden_info" id = "hidden_rtop"><p>Flowers</p></div></a>
+        {% endif %}       
+        <div class = "hidden_info" id = "hidden_lbottom"><p>Cat&Dog(Undeveloped)</p></div>
+        <div class = "hidden_info" id = "hidden_rbottom"><p>...</p></div>
+        <div class="right_top"></div>
+        <div class="left_bottom"></div>
+        <div class="left_top"></div>
+        <div class="right_bottom"></div>
+    </div>
+    <div class="circle" id = "info_area" style="display: none;text-align:center;">
+        <div class="info">
+            <p>Image Onlne Classifier</p>
+        </div>
+        <div class="line">
+            <hr />
+        </div>
+        <div class="dynamic_info">
+            {% if user_judge == False %}
+                <div id = "login">
+                    <a href="/login"><p class = "unlog_user">Login</p></a>
+                </div>
+                <div id = "signup">
+                    <a href="/sign_up"><p class = "unlog_user">Sign Up</p></a>
+                </div>
+            {% else %}
+                <div id = "welcome">
+                    <p> welcome {{ user_name }}</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
     </body>
 </html>

@@ -1,0 +1,232 @@
+body {
+    margin: 0;
+}
+
+body, html {
+    height: 100%;
+}
+
+a {
+	text-decoration:none;
+}
+
+.left_top {
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	padding: 0;
+	margin: 0;
+	background: url(../web_img/others.jpg);
+	background-size: 100% 100%;
+}
+
+.right_top {
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	left: 50%;
+	padding: 0;
+	margin: 0;
+	background: url(../web_img/flowers.jpg);
+	background-size: 100% 100%;
+}
+
+.left_bottom {
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	top: 50%;
+	padding: 0;
+	margin: 0;
+    background: url(../web_img/dogAcat.jpg);
+	background-size: 100% 100%;
+}
+
+.right_bottom {
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	top: 50%;
+	left: 50%;
+	padding: 0;
+	margin: 0;
+	background-color: rgba(220,220,220,0.8);
+}
+
+.hidden_info {
+	cursor: pointer;
+}
+
+.hidden_info p {
+	font-family: Century Gothic, Futura, Verdana;
+    font-size: 40pt;
+    text-shadow: 1px 1px 2px #666666;
+    color: #346137;
+    padding: 0;
+    margin-top: 25%;
+    text-align: center;
+}
+
+#hidden_ltop {
+	cursor: pointer;
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	padding: 0;
+	margin: 0;
+	background-color: rgba(220,220,220,0.5);
+	opacity: 0;
+	z-index: 2;
+}
+
+#hidden_ltop:hover {
+	cursor: pointer;
+	opacity: 1;
+	transition: all .3s ease;
+
+}
+
+#hidden_rtop {
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	left: 50%;
+	padding: 0;
+	margin: 0;
+	background-color: rgba(220,220,220,0.5);
+	opacity: 0;
+	z-index: 2;
+}
+
+#hidden_rtop:hover {
+	cursor: pointer;
+	opacity: 1;
+	transition: all .3s ease;
+
+}
+
+#hidden_lbottom {
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	top: 50%;
+	padding: 0;
+	margin: 0;
+	background-color: rgba(220,220,220,0.5);
+	opacity: 0;
+	z-index: 2;
+}
+
+#hidden_lbottom:hover {
+	cursor: pointer;
+	opacity: 1;
+	transition: all .3s ease;
+
+}
+
+#hidden_rbottom {
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	top: 50%;
+	left: 50%;
+	padding: 0;
+	margin: 0;
+	background-color: rgba(220,220,220,0.5);
+	opacity: 0;
+	z-index: 2;
+}
+
+#hidden_rbottom:hover {
+	cursor: pointer;
+	opacity: 1;
+	transition: all .3s ease;
+}
+
+/*#show_area div:hover {
+	cursor: pointer;
+	-webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    transform: scale(1.02);
+    transition-delay: 0.1s;
+    z-index: 2;
+}*/
+
+/*#show_area div {
+	z-index: 1;
+}*/
+
+.circle {
+	position: absolute;
+	width: 30%;
+	height: 30%;
+	left: 35%;
+	top: 35%;
+	border-radius:25% 0;
+	padding: 0;
+	margin: 0;
+	background-color: rgba(220,220,220,0.8);
+	z-index: 3;
+}
+
+.circle p {
+	font-family: Century Gothic, Futura, Verdana;
+    font-size: 24pt;
+    text-shadow: 1px 1px 2px #666666;
+    color: #346137;
+    padding: 0;
+    margin-top: 12%;
+}
+
+.info {
+	position: absolute;
+    width: 100%;
+    height: 50%;
+    padding: 0;
+	margin: 0;
+   	z-index: 3;
+}
+
+.line {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+hr {
+	box-shadow: 0 0 8px white;
+	color: white;
+	margin: 0;
+	padding: 0;
+}
+
+.dynamic_info {
+	position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 50%;
+    padding: 0;
+	margin: 0;
+   	z-index: 3;
+}
+
+#login {
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+#signup {
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	left: 50%;
+	padding: 0;
+	margin: 0;
+}
