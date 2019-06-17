@@ -2,10 +2,10 @@
 以Python-Flask框架为基础，使用Docker部署Tensorflow-Serving实现Web图片在线分类系统。
 ## 服务器端安装
 一.Tensorflow-Serving子服务器  
-1.使用docker拉取TF-Serving镜像或使用DockerFile构建镜像    
+1.使用docker拉取TF-Serving镜像或使用DockerFile构建镜像      
 2.部署模型  
 二.Python子服务器  
-1.安装python2.7
+1.安装python2.7  
 2.为保证系统安全，建议安装虚拟环境  
 ```
 pip install virtualenv
